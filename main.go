@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
-	var in io.Reader
-	in = os.Stdin
-	out := os.Stdout
+	var (
+		in io.Reader = os.Stdin
+		out io.Writer = os.Stdout
+	)
 	if len(os.Args) > 1 {
 		ins := make([]io.Reader, len(os.Args)-1)
 		for i, file := range os.Args[1:] {
